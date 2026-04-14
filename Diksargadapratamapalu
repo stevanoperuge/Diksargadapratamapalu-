@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan Satpam Gada Pratama - Sulawesi Tengah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black-matte: #121212;
+            --gray-deep: #1e1e1e;
+            --white: #ffffff;
+            --green-wa: #25D366;
+            --red-yt: #FF0000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--black-matte); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+        /* --- Header --- */
+        header {
+            background: linear-gradient(180deg, #000, var(--gray-deep));
+            padding: 25px 15px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+        .logo-wrapper { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            margin-bottom: 15px; 
+            align-items: center; 
+        }
+        .logo-img { 
+            height: 85px; 
+            width: auto; 
+            object-fit: contain; 
+            filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
+        }
+        header h1 { font-size: 1.1rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- Social Bar --- */
+        .social-bar {
+            background: #000; padding: 12px; display: flex; justify-content: center; 
+            gap: 30px; border-bottom: 1px solid #333;
+        }
+        .social-bar a { 
+            color: var(--white); 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .fa-youtube { color: var(--red-yt); }
+        .fa-whatsapp { color: var(--green-wa); }
+        .social-text { font-size: 0.8rem; text-transform: uppercase; }
+
+        /* --- SLIDER --- */
+        .slider-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            background: #000;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 380px; 
+            object-fit: cover;
+            display: block;
+        }
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.75);
+            padding: 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .dots-container {
+            text-align: center;
+            margin-top: -25px;
+            position: relative;
+            z-index: 10;
+            padding-bottom: 10px;
+        }
+        .dot {
+            height: 8px; width: 8px; margin: 0 4px;
+            background-color: #bbb; border-radius: 50%;
+            display: inline-block; transition: 0.3s;
+        }
+        .dot.active { background-color: var(--gold); transform: scale(1.3); }
+
+        /* --- Content Sections --- */
+        .container { padding: 15px; max-width: 600px; margin: 0 auto; }
+        section { margin-bottom: 30px; }
+        h2 { 
+            color: var(--gold); font-size: 1rem; text-transform: uppercase; 
+            margin-bottom: 15px; border-left: 4px solid var(--gold); padding-left: 10px;
+        }
+        .card { 
+            background: var(--gray-deep); padding: 20px; border-radius: 10px; 
+            border: 1px solid #333; margin-bottom: 15px;
+        }
+
+        /* --- Deskripsi & Animasi --- */
+        .description-text {
+            font-size: 0.9rem;
+            color: #ddd;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1e1e1e, #000);
+            border: 2px solid var(--gold);
+            text-align: center;
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); }
+            50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); }
+        }
+        .date-large {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin: 10px 0;
+        }
+        
+        .price { font-size: 2.2rem; font-weight: 800; color: var(--gold); margin: 5px 0; text-align: center;}
+        
+        ul { list-style: none; }
+        ul li { margin-bottom: 10px; padding-left: 20px; position: relative; font-size: 0.9rem; }
+        ul li::before { content: '▶'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; }
+
+        /* --- Form --- */
+        .form-box { background: #1a1a1a; padding: 20px; border-radius: 15px; border: 1px solid var(--gold); }
+        .form-group { margin-bottom: 15px; }
+        input { 
+            width: 100%; padding: 15px; background: #252525; border: 1px solid #444; 
+            color: white; border-radius: 8px; font-size: 1rem; outline: none;
+        }
+        .btn-wa { 
+            width: 100%; background: var(--green-wa); color: white; padding: 18px; border: none; 
+            border-radius: 8px; font-weight: 800; text-transform: uppercase; cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-wa:hover { background: #1ebd5b; transform: translateY(-2px); }
+
+        footer { text-align: center; padding: 40px 20px; font-size: 0.7rem; color: #666; background: #000; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-wrapper">
+            <img src="https://cdn.kibrispdr.org/data/763/logo-satpam-png-21.png" alt="Logo Satpam" class="logo-img">
+            <img src="https://www.gadapratama.com/wp-content/uploads/2021/08/gadapratamalogo3.png" alt="Logo Gada Pratama" class="logo-img">
+        </div>
+        <h1>Pelatihan Satpam Gada Pratama<br>POLDA Sulawesi Tengah</h1>
+    </header>
+
+    <div class="social-bar">
+        <a href="https://youtube.com/@moriboy9407" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+            <span class="social-text">YouTube</span>
+        </a>
+        <a href="https://wa.me/message/KXMNWIUR75S3C1" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="social-text">WhatsApp</span>
+        </a>
+    </div>
+
+    <div class="container">
+        
+        <div class="slider-container">
+            <div class="slides" id="slide-track">
+                <div class="slide"><img src="https://i.ibb.co.com/J9khT35/foto1-jpg-Diedit.jpg" alt="Foto 1"><div class="slide-caption">FOTO BERSAMA PEMBUKAAN DIKSAR</div></div>
+                <div class="slide"><img src="https://i.ibb.co.com/WWLjcSSL/foto2-jpg-Diedit.jpg" alt="Foto 2"><div class="slide-caption">PEMBACAAN JANJI SATPAM</div></div>
+                <div class="slide"><img src="https://i.ibb.co.com/gMffbCQp/foto3-jpg-Diedit.jpg" alt="Foto 3"><div class="slide-caption">PENERIMAAN MATERI</div></div>
+                <div class="slide"><img src="https://i.ibb.co.com/Zvh8DYK/foto4-jpg-Diedit.jpg" alt="Foto 4"><div class="slide-caption">BINSIK SIANG</div></div>
+                <div class="slide"><img src="https://i.ibb.co.com/SXZJzTXY/foto5-jpg-Diedit.jpg" alt="Foto 5"><div class="slide-caption">Teknik Penggunaan Tongkat & Borgol</div></div>
+                <div class="slide"><img src="https://i.ibb.co.com/jPVnfCSZ/foto6-jpg-Diedit.jpg" alt="Foto 6"><div class="slide-caption">Penutupan & Penyerahan Ijazah</div></div>
+            </div>
+        </div>
+        <div class="dots-container" id="dots-container"></div>
+
+        <section>
+            <h2>Deskripsi Pelatihan</h2>
+            <div class="card">
+                <p class="description-text">
+                    <strong>Gada Pratama</strong> adalah pelatihan dasar wajib bagi calon anggota Satuan Pengamanan. Pelatihan ini bekerja sama dengan <strong>DITBINMAS POLDA SULAWESI TENGAH</strong> guna menghasilkan Satuan Pengamanan yang memiliki Sikap, Mental, Kepribadian Kesamaptaan dan Pengetahuan serta keterampilan dasar sebagai pelaksana tugas SATPAM. Materi Pelatihan sesuai dengan PERKAP NO. 1 Tahun 2023 tentang Pengamanan Swakarsa.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Waktu Pelaksanaan</h2>
+            <div class="card highlight-box">
+                <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Akan Dilaksanakan Pada:</p>
+                <span class="date-large">23 APRIL 2026 </span>
+                <p style="font-weight: bold; color: var(--white);"></p>
+            </div>
+        </section>
+
+        <section>
+       <section>
+            <h2>Investasi</h2>
+            <div class="card">
+                <p style="text-align: center;">Biaya Pelatihan </p>
+                <div class="price">Rp 5.500.000,-</div>
+            </div>
+      
+        <section>
+            <h2>Fasilitas & Syarat</h2>
+            <div class="card">
+                <h4 style="color:var(--gold); margin-bottom:10px;">Fasilitas:</h4>
+                <ul>
+                    <li>Diasramakan Selama Pendidikan </li>
+                    <li>Makan 3x Sehari </li>
+                    <li>Seragam Satpam PDH Cream Lengkap</li>
+                    <li>Ijazah Satpam Gada Pratama Nasional</li>
+                    <li>Kartu Tanda Anggota (KTA) Satpam </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4 style="color:var(--gold); margin-bottom:10px;">Persyaratan:</h4>
+                <ul>
+                    <li>Foto Copy KTP & Ijazah Terakhir</li>
+                    <li>Surat Keterangan Catatan Kepolisian (SKCK)</li>
+                    <li>Tinggi Pria min. 165cm / Wanita 155cm</li>
+                    <li>Pemeriksaan Kesehatan di Lokasi DIKSAR </li>
+                </ul>
+            </div>
+        </section>
+  </section>
+            <h2>Lokasi Pelatihan</h2>
+            <div class="card">
+                <p>📍 <strong>Lokasi </strong></p>
+                <p style="margin-top: 8px; font-size: 1.05rem;">
+                    Jl. Banteng, Birobuli Selatan, Kec. Palu Selatan, Kota Palu, Sulawesi Tengah
+                </p>
+                
+                <a href="https://maps.google.com/?q=Jl.+Banteng,+Birobuli+Selatan,+Kota+Palu" target="_blank" class="btn-maps">
+                    <i class="fa-solid fa-location-arrow"></i> BUKA DI GOOGLE MAPS
+                </a>
+            </div>
+            
+            <div class="card" style="padding: 0; overflow: hidden; height: 250px; border: 1px solid var(--gold);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.28475850901!2d119.905!3d-0.915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNTQnNTQuMCJTIDExOcKwNTQnMTguMCJF!5e0!3m2!1sid!2sid!4v1712345678901" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+        <section>
+            <h2>Pendaftaran Online</h2>
+            <div class="form-box">
+                <div class="form-group"><input type="text" id="reg_nama" placeholder="Nama Lengkap"></div>
+                <div class="form-group"><input type="text" id="reg_ttl" placeholder="Tempat & Tanggal Lahir"></div>
+                <div class="form-group"><input type="text" id="reg_alamat" placeholder="Alamat Domisili"></div>
+                <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Tinggi (cm) "></div>
+                <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Berat (kg)"></div>
+                 <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Golongan Darah"></div>
+                 <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Ukuran Baju"></div>
+                 <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Ukuran Sepatu"></div>
+                <div class="form-group"><input type="text" id="reg_nik" placeholder="NIK KTP"></div>
+                <div class="form-group"><input type="text" id="reg_kontak" placeholder="Email / No. HP"></div>
+                <button class="btn-wa" onclick="kirimWA()">Daftar via WhatsApp</button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pelatihan Satpam Gada Pratama Sulteng.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.getElementById('slide-track');
+        const slideItems = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('dots-container');
+
+        slideItems.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+        function updateSlide() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slideItems.length;
+            updateSlide();
+        }, 3500);
+
+        function kirimWA() {
+            const fields = {
+                Nama: document.getElementById('reg_nama').value,
+                TTL: document.getElementById('reg_ttl').value,
+                Alamat: document.getElementById('reg_alamat').value,
+                Fisik: document.getElementById('reg_tinggi').value,
+                NIK: document.getElementById('reg_nik').value,
+                HP: document.getElementById('reg_kontak').value
+            };
+
+            if(!fields.Nama || !fields.HP) return alert("Mohon lengkapi Nama dan No. HP!");
+
+            let msg = `Halo Admin Pelatihan Satpam Sulteng,%0A%0ASaya ingin mendaftar Gada Pratama:%0A%0A`;
+            for (const [key, val] of Object.entries(fields)) msg += `*${key}:* ${val}%0A`;
+
+            window.open("https://wa.me/message/KXMNWIUR75S3C1?text=" + msg, '_blank');
+        }
+    </script>
+</body>
+</html>
