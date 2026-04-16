@@ -111,6 +111,35 @@
         }
         .dot.active { background-color: var(--gold); transform: scale(1.3); }
 
+        /* --- ADVERTISEMENT STYLES --- */
+        .ad-container {
+            margin: 20px 0;
+            padding: 10px;
+            background: #222;
+            border: 1px dashed #444;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .ad-label {
+            display: block;
+            font-size: 0.6rem;
+            color: #666;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .ad-box {
+            background: #111;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .ad-banner { width: 100%; height: 90px; }
+        .ad-rect { width: 100%; height: 250px; margin-bottom: 20px;}
+
         /* --- Content Sections --- */
         .container { padding: 15px; max-width: 600px; margin: 0 auto; }
         section { margin-bottom: 30px; }
@@ -170,6 +199,11 @@
         }
         .btn-wa:hover { background: #1ebd5b; transform: translateY(-2px); }
 
+        .btn-maps {
+            display: block; text-align: center; background: var(--gold); color: black;
+            padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;
+        }
+
         footer { text-align: center; padding: 40px 20px; font-size: 0.7rem; color: #666; background: #000; }
     </style>
 </head>
@@ -177,8 +211,9 @@
 
     <header>
         <div class="logo-wrapper">
-            <img src="https://cdn.kibrispdr.org/data/763/logo-satpam-png-21.png" alt="Logo Satpam" class="logo-img">
-            <img src="https://www.gadapratama.com/wp-content/uploads/2021/08/gadapratamalogo3.png" alt="Logo Gada Pratama" class="logo-img">
+            <img src="https://i.ibb.co.com/DPvBJFMr/5b778494-5ce9-4d8d-b443-37ddb5b90d9f.png" alt="Logo Satpam" class="logo-img">
+            <img src="https://i.ibb.co.com/bMtg1Kpg/gada-pratama.png" alt="Logo Gada Pratama" class="logo-img">
+            <img src="https://i.ibb.co.com/GfZwxDCX/madya.png" class="logo-img">
         </div>
         <h1>Pelatihan Satpam Gada Pratama<br>POLDA Sulawesi Tengah</h1>
     </header>
@@ -188,7 +223,7 @@
             <i class="fa-brands fa-youtube"></i>
             <span class="social-text">YouTube</span>
         </a>
-        <a href="https://wa.me/message/KXMNWIUR75S3C1" target="_blank">
+        <a href="https://wa.me/6287814840371" target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
             <span class="social-text">WhatsApp</span>
         </a>
@@ -208,6 +243,13 @@
         </div>
         <div class="dots-container" id="dots-container"></div>
 
+        <div class="ad-container">
+            <span class="ad-label">ADVERTISEMENT</span>
+            <div class="ad-box ad-banner">
+                <img src="https://i.ibb.co.com/xqpbLnpM/Gemini-Generated-Image-exhuaaexhuaaexhu.jpg">
+            </div>
+        </div>
+
         <section>
             <h2>Deskripsi Pelatihan</h2>
             <div class="card">
@@ -222,17 +264,16 @@
             <div class="card highlight-box">
                 <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Akan Dilaksanakan Pada:</p>
                 <span class="date-large">23 APRIL 2026 </span>
-                <p style="font-weight: bold; color: var(--white);"></p>
             </div>
         </section>
 
         <section>
-       <section>
             <h2>Investasi</h2>
             <div class="card">
                 <p style="text-align: center;">Biaya Pelatihan </p>
                 <div class="price">Rp 5.500.000,-</div>
             </div>
+        </section>
       
         <section>
             <h2>Fasilitas & Syarat</h2>
@@ -246,17 +287,16 @@
                     <li>Kartu Tanda Anggota (KTA) Satpam </li>
                 </ul>
             </div>
-            <div class="card">
-                <h4 style="color:var(--gold); margin-bottom:10px;">Persyaratan:</h4>
-                <ul>
-                    <li>Foto Copy KTP & Ijazah Terakhir</li>
-                    <li>Surat Keterangan Catatan Kepolisian (SKCK)</li>
-                    <li>Tinggi Pria min. 165cm / Wanita 155cm</li>
-                    <li>Pemeriksaan Kesehatan di Lokasi DIKSAR </li>
-                </ul>
-            </div>
         </section>
-  </section>
+
+        <div class="ad-container">
+            <span class="ad-label">SPONSORED</span>
+            <div class="ad-box ad-rect">
+                <img src="https://via.placeholder.com/400x250/111111/D4AF37?text=IKLAN+REKANAN+SATPAM" style="width:100%; height:100%; object-fit: cover;">
+            </div>
+        </div>
+
+        <section>
             <h2>Lokasi Pelatihan</h2>
             <div class="card">
                 <p>📍 <strong>Lokasi </strong></p>
@@ -264,31 +304,25 @@
                     Jl. Banteng, Birobuli Selatan, Kec. Palu Selatan, Kota Palu, Sulawesi Tengah
                 </p>
                 
-                <a href="https://maps.google.com/?q=Jl.+Banteng,+Birobuli+Selatan,+Kota+Palu" target="_blank" class="btn-maps">
+                <a href="#" target="_blank" class="btn-maps">
                     <i class="fa-solid fa-location-arrow"></i> BUKA DI GOOGLE MAPS
                 </a>
             </div>
-            
-            <div class="card" style="padding: 0; overflow: hidden; height: 250px; border: 1px solid var(--gold);">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.28475850901!2d119.905!3d-0.915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNTQnNTQuMCJTIDExOcKwNTQnMTguMCJF!5e0!3m2!1sid!2sid!4v1712345678901" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
-            </div>
         </section>
+
         <section>
             <h2>Pendaftaran Online</h2>
             <div class="form-box">
                 <div class="form-group"><input type="text" id="reg_nama" placeholder="Nama Lengkap"></div>
                 <div class="form-group"><input type="text" id="reg_ttl" placeholder="Tempat & Tanggal Lahir"></div>
                 <div class="form-group"><input type="text" id="reg_alamat" placeholder="Alamat Domisili"></div>
-                <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Tinggi (cm) "></div>
-                <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Berat (kg)"></div>
-                 <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Golongan Darah"></div>
-                 <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Ukuran Baju"></div>
-                 <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Ukuran Sepatu"></div>
+                <div class="form-group"><input type="text" id="reg_tinggi" placeholder="Tinggi (cm)"></div>
+                <div class="form-group"><input type="text" id="reg_berat" placeholder="Berat (kg)"></div>
+                <div class="form-group"><input type="text" id="reg_goldar" placeholder="Golongan Darah"></div>
+                <div class="form-group"><input type="text" id="reg_baju" placeholder="Ukuran Baju"></div>
+                <div class="form-group"><input type="text" id="reg_sepatu" placeholder="Ukuran Sepatu"></div>
                 <div class="form-group"><input type="text" id="reg_nik" placeholder="NIK KTP"></div>
-                <div class="form-group"><input type="text" id="reg_kontak" placeholder="Email / No. HP"></div>
+                <div class="form-group"><input type="text" id="reg_kontak" placeholder="No. HP Aktif"></div>
                 <button class="btn-wa" onclick="kirimWA()">Daftar via WhatsApp</button>
             </div>
         </section>
@@ -296,7 +330,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Pelatihan Satpam Gada Pratama Sulteng.</p>
+        <p>© 2026 Pelatihan Satpam Gada Pratama Sulteng.</p>
     </footer>
 
     <script>
@@ -326,20 +360,26 @@
 
         function kirimWA() {
             const fields = {
-                Nama: document.getElementById('reg_nama').value,
-                TTL: document.getElementById('reg_ttl').value,
-                Alamat: document.getElementById('reg_alamat').value,
-                Fisik: document.getElementById('reg_tinggi').value,
-                NIK: document.getElementById('reg_nik').value,
-                HP: document.getElementById('reg_kontak').value
+                "Nama": document.getElementById('reg_nama').value,
+                "TTL": document.getElementById('reg_ttl').value,
+                "Alamat": document.getElementById('reg_alamat').value,
+                "Tinggi": document.getElementById('reg_tinggi').value,
+                "Berat": document.getElementById('reg_berat').value,
+                "Gol Darah": document.getElementById('reg_goldar').value,
+                "Ukuran Baju": document.getElementById('reg_baju').value,
+                "Ukuran Sepatu": document.getElementById('reg_sepatu').value,
+                "NIK": document.getElementById('reg_nik').value,
+                "No. HP": document.getElementById('reg_kontak').value
             };
 
-            if(!fields.Nama || !fields.HP) return alert("Mohon lengkapi Nama dan No. HP!");
+            if(!fields["Nama"] || !fields["No. HP"]) return alert("Mohon lengkapi Nama dan No. HP!");
 
             let msg = `Halo Admin Pelatihan Satpam Sulteng,%0A%0ASaya ingin mendaftar Gada Pratama:%0A%0A`;
-            for (const [key, val] of Object.entries(fields)) msg += `*${key}:* ${val}%0A`;
+            for (const [key, val] of Object.entries(fields)) {
+                msg += `*${key}:* ${val}%0A`;
+            }
 
-            window.open("https://wa.me/message/KXMNWIUR75S3C1?text=" + msg, '_blank');
+            window.open("https://wa.me/6287814840371?text=" + msg, '_blank');
         }
     </script>
 </body>
