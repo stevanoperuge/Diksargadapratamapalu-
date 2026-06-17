@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pelatihan Satpam Gada Pratama Angkatan 21 - Sulteng</title>
+    <title>Pelatihan Satpam Gada Pratama Angkatan 101 - Sulteng</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
@@ -203,14 +203,14 @@
             <img src="https://i.ibb.co.com/4gtyWg6h/polda-sulteng.png" alt="Logo Satpam" class="logo-img">
            
             <img src="https://i.ibb.co.com/bMtg1Kpg/gada-pratama.png" alt="Logo Gada Pratama" class="logo-img">
-            <img src="https://i.ibb.co.com/27zkbt9r/IMG-0651.png" alt="Logo Gada Pratama" class="logo-img">
+            <img src="https://i.ibb.co.com/CpBycps6/IMG-20260423-WA0011.jpg" alt="Logo Gada Pratama" class="logo-img">
         </div>
       
         <h1>Pelatihan Satpam Gada Pratama SULTENG</h1>
-         <p class="sub-header">PT. BRATA KERTA RAHARJA </p>
+         <p class="sub-header">PT. RIFAZAH PENGINDO JAYA</p>
           <p class="sub-header">Bekerjasama dengan</p>
         <p class="sub-header">DITBINMAS POLDA SULAWESI TENGAH</p>
-        <span class="batch-info">ANGKATAN 21 </span>
+        <span class="batch-info">ANGKATAN 101</span>
     </header>
 
     <div class="social-bar">
@@ -251,7 +251,7 @@
             <h2>Waktu Pelaksanaan</h2>
             <div class="card highlight-box">
                 <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Akan Dilaksanakan Pada:</p>
-                <span class="date-large">18 JUNI 2026 </span>
+                <span class="date-large">16 JULI 2026 </span>
             </div>
         </section>
 
@@ -263,7 +263,14 @@
             </div>
         </section>
       
-
+       <section>
+            <h2>PEMBAYARAN</h2>
+            <div class="card">
+                <p style="text-align: center;">MANDIRI </p>
+                <div class="price">151-00-0720873-6</div>
+                  <p style="text-align: center;">a.n PT. RIFAZAH PENGINDO JAYA </p>
+            </div>
+        </section>
         
         <section>
             <h2>Fasilitas</h2>
@@ -371,11 +378,13 @@
                 "Berat": document.getElementById('reg_berat').value,
                 "NIK": document.getElementById('reg_nik').value,
                 "No. HP": document.getElementById('reg_kontak').value
+                 "ukuran baju": document.getElementById('ukuran_baju').value
+                 "ukuran sepatu": document.getElementById('ukuran_sepatu').value
             };
 
             if(!fields["Nama"] || !fields["No. HP"]) return alert("Mohon lengkapi Nama dan No. HP!");
 
-            let msg = `Halo Admin PT. Rifazah Pengindo Jaya,%0A%0ASaya ingin mendaftar Gada Pratama Angkatan 100:%0A%0A`;
+            let msg = `Halo Admin PT. Rifazah Pengindo Jaya,%0A%0ASaya ingin mendaftar Gada Pratama Angkatan 101:%0A%0A`;
             for (const [key, val] of Object.entries(fields)) {
                 msg += `*${key}:* ${val}%0A`;
             }
